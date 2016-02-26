@@ -1,0 +1,85 @@
+INTRODUCTION
+============
+
+This is vulcan 0.92, a program that will let you play against the computer a
+chess variant that appears in a certain well-known science fiction TV series.
+
+
+INSTALLING
+==========
+
+You need OpenGL and X libraries and header files installed.  As of version 0.5,
+you also need libpng.
+
+As the superuser, run `make install'.
+
+The data files will be installed at /usr/local/share/vulcan, and the game
+binary will be installed at /usr/local/bin/vulcan. If you wish to change this
+configuration, edit the Makefile and change the variables PREFIX, BIN, and
+DATA_DIR (at the beginning of the file).
+
+
+RUNNING
+=======
+
+Run `vulcan'. Use the option -h to see some command line options.
+
+
+GAMEPLAY NOTES
+==============
+
+Click with the left button on a piece or a square to select it. If you
+can move the piece, the squares where the piece can be moved to will be
+highlighted. Click on the right button to unselect.
+
+Rotate the board by moving the mouse while pressing the left button.
+Move the mouse while holding the right button to zoom in and out.
+
+While in a game, press ESC to bring up the menu.
+
+The rules implemented by this program were created by Jens Meder, and are
+described here:
+
+  http://home.arcor.de/jens.meder/3dschach/indexe.html
+
+In a nutshell, here's the idea:
+
+  * viewing the board from above, you'll notice that some squares overlap.
+  * from that view, piece moves are the same as in regular chess, except
+    that you may choose which of the overlapping squares the piece will land at.
+  * the movement of a sliding piece (bishop, rook or queen) is blocked by
+    a piece in any of the overlapping squares; the sliding piece may land
+    above or below the blocking piece.
+  * the small 2x2 boards (the "attack boards") can be moved to an adjacent
+    corner at the same level if they're holding just one piece, or to a corner
+    of a different level if they're empty.
+
+
+3D MODELS
+=========
+
+The 3D models were extracted from the xscreensaver mode `endgame', which in
+turn uses the 3D models from glChess. The comments in chessmodels.c say the
+following:
+
+  Copyright (C) 2006  John-Paul Gignac <jjgignac at users dot sf dot net>
+
+  Copyright (C) 2002  Robert  Ancell <bob27 at users dot sourceforge dot net>
+                      Michael Duelli <duelli at users dot sourceforge dot net>
+
+
+LIMITATIONS
+===========
+
+It doesn't support en-passant captures yet. Pawns are automatically promoted
+to queens. There's no draw (perhaps it should've been called `Klingon' instead). 
+
+See TECH for some random tech notes.
+
+
+COMMENTS?
+=========
+
+Please e-mail any comments, suggestions and patches to:
+
+  <m at fzort dot org>

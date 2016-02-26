@@ -1,0 +1,5 @@
+SDL
+* fazer nao usar 100% de CPU o tempo todo (select no loop principal?)
+* chamada a menu deve funcionar (eventos de teclado)
+* fazer funcionar com mingw32 (como fica o libpng? compilar local, como o
+  discador orolix?)

@@ -1,0 +1,28 @@
+Tech notes for version 0.9.
+
+
+GRAPHICS
+========
+
+Rendering is straightforward enough. The picking code is a bit more interesting.
+
+To find out on which object the player is clicking, the program shoots a ray
+from the viewing position through the pixel where the player clicked. Finding
+the intersection with the boards is easy, since they're just planes parallel
+to xy. To find out if the ray intersects a piece, first the program checks if
+the ray hits a sphere that encloses the piece. If it does, then the program
+does a more expensive test against a BSP tree representation of the piece
+volume. This is (theoretically) a O(log N) operation, which is better than a 
+O(N) check against every polygon in the model. In practice, in the BSP tree
+case N is a bit larger because of all the polygon splitting that happens when
+building the tree. But it still wins.
+
+
+A.I.
+====
+
+The artificial intelligence is "textbook" minimax with alpha-beta pruning.
+Apart from trying to evaluate capture moves first, this version doesn't try
+anything clever - there's no principal variation search, "killer heuristic", or
+anything. The evaluation function is pretty simple, too - pretty much just
+material imbalance. This should change in future releases.

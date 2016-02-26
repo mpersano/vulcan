@@ -1,0 +1,82 @@
+2008-02-24
+	* Version 0.92 released
+	* Fixed video output bug with some setups when using SDL
+	* Disabled window resizing with SDL (very non-portable with OpenGL)
+
+2008-02-25
+	* Version 0.91 released
+
+2008-02-24
+	* SDL Version
+	* win32 makefile
+
+2007-11-23
+	* Version 0.9 released
+	* Fixed embarrasing bug in Makefile
+
+2007-11-22
+	* Added second light source
+	* Made move history toggable in options menu
+	* Added options menu to in-game menu
+	* Freeing unneeded memory in modeldef.y
+	* Minor cosmetic changes
+
+2007-11-21
+	* Version 0.8 released
+	* Moved 3d helper code (vectors, matrices) to library
+	* chessmodels.c (hacked from glChess) added to project
+	* Some code cleanup
+
+2007-11-09
+	* Version 0.7.1 fixes glitch at window initialization
+
+2007-11-08
+	* Version 0.7 released
+	* Free 3D models! (from glChess)
+	* Many bug fixes
+	* Saner camera movement
+	* Textures and reflections
+
+2007-10-29
+	* Version 0.6 released
+	* In-game menu
+	* Clocks
+	* Move history
+	* New model file format that includes the BSP tree
+	* Better move picking
+
+2007-10-27
+	* Version 0.5.1 fixes some ui bugs
+
+2007-10-25
+	* Version 0.5 released
+	* Code tweaks, some redesign
+	* Animations
+	* Main menu
+
+2007-10-03
+	* Version 0.4 released
+	* Minor code cleanup
+	* Improved font code
+	* win32 code removed (better use SDL or something in the future)
+
+2006-08-13
+	* preliminary win32 port
+	* performance improvements in AI
+	* lots of bugs fixed in move generator (thanks to Doug Keenan for
+	  testing)
+
+2006-07-22
+	* Version 0.3 released
+	* Added castling
+	* A.I. slightly faster
+
+2006-07-17
+
+	* Version 0.2 released
+	* Some endianness/64-bit bugs were fixed.
+
+2006-07-14
+
+	* Version 0.1 released
+	* First release
