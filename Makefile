@@ -117,19 +117,19 @@ tarball: MANIFEST
 	(cd ..; xargs tar -czvf vulcan-dev/$(TARBALL) < vulcan-dev/MANIFEST)
 	(cd ..; rm vulcan-$(VERSION))
 
-install: $(TARGET) chessmodels
+installdirs: mkinstalldirs
+	./mkinstalldirs -m 755 $(PREFIX) $(BIN) $(PREFIX)/share \
+	$(DATA_DIR) $(FONT_DIR) $(MODEL_DIR) $(TEXTURE_DIR)
+
+install: $(TARGET) chessmodels installdirs
 	install -s -m 755 $(TARGET) $(BIN)
-	install -m 755 -d $(DATA_DIR)
-	install -m 755 -d $(FONT_DIR)
 	cp data/fonts/* $(FONT_DIR)
 	chmod 644 $(FONT_DIR)/*
-	install -m 755 -d $(MODEL_DIR)
 	./chessmodels > $(MODEL_DIR)/chess-models.modeldef
 	chmod 644 $(MODEL_DIR)/*
-	install -m 755 -d $(TEXTURE_DIR)
 	cp data/textures/* $(TEXTURE_DIR)
 	chmod 644 $(TEXTURE_DIR)/*
 
-distclean:
+uninstall:
 	rm -f $(BIN)/$(TARGET)
 	rm -fr $(DATA_DIR)
