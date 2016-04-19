@@ -11,12 +11,23 @@ INSTALLING
 You need OpenGL and X libraries and header files installed.  As of version 0.5,
 you also need libpng.
 
-As the superuser, run `make install'.
 
-The data files will be installed at /usr/local/share/vulcan, and the game
-binary will be installed at /usr/local/bin/vulcan. If you wish to change this
+To install system-wide, either
+	run `make' and then run `sudo make install',
+or
+	as the superuser, run `make install'.
+
+The data files will be installed in /usr/local/share/vulcan, and the game
+binary 'vulcan' will be installed in /usr/local/bin. If you wish to change this
 configuration, edit the Makefile and change the variables PREFIX, BIN, and
 DATA_DIR (at the beginning of the file).
+
+
+Alternatively, to install in the current user account,
+run `make PREFIX=~/.vulcan install'.
+
+In this case, the data files will be installed in ~/.vulcan/share/vulcan,
+and the game binary 'vulcan' will be installed in ~/.vulcan/bin.
 
 
 RUNNING
